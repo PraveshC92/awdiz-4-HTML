@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        .col-blue {
+            color: rgb(70, 165, 228);
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .registration-form {
+            width: 700px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            border: 1px solid;
+        }
+
+        #register {
+            width: 100px;
+            height: 30px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-image: url('./../images/wp9549951.jpg');width:100%;height:1000px">
+        <h1 class="col-blue">User Registration</h1>
+        <div class="registration-form">
+           
+            <fieldset>
+                <legend>Login</legend>
+                <label>First Name: </label> <input type="text" />&nbsp;&nbsp;&nbsp;&nbsp;<label>Last Name: </label>
+                <input type="text" /><br /><br />
+                <label>Email: </label> <input type="email" />&nbsp;&nbsp;&nbsp;&nbsp;<label>Phone: </label> <input
+                    type="text" /><br /><br />
+                <label>Mobile: </label> <input type="text" />&nbsp;&nbsp;&nbsp;&nbsp;<label>Address: </label> <input
+                    type="text" /><br /><br />
+                <label>DOB : </label> <input type="date" />&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />
+                <p>Please Select your favorite Programming Language</p>
+                <input type="radio" value="C++" /><label>C++ </label><br />
+                <input type="radio" value="Java" /><label>JAVA </label><br />
+                <input type="radio" value=".Net" /><label>.NET </label><br />
+
+                <p>Please Select Your Occupation</p>
+                <input type="checkbox" value="Student" /><label>Student </label><br />
+                <input type="checkbox" value="Professional" /><label>Professional </label><br />
+                <input type="checkbox" value="Self Employed " /><label>Self Employed </label><br />
+
+                <p>Please Set Your Password</p>
+                <label>Password: </label> <input type="password" /><br />
+                <label>Confirm Password: </label> <input type="password" /><br />
+
+                <input type="submit" value="Register" id="register" />
+            </fieldset>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
