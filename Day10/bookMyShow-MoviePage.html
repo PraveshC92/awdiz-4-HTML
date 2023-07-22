@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie - Book My Show</title>
+    <script src="https://kit.fontawesome.com/d3efeb4a23.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Roboto, sans-serif;
+
+        }
+
+        #screen {
+            width: 100%;
+            height: 1500px;
+            /* border: 1px red solid; */
+
+
+        }
+
+        #movie-detail-section {
+            width: 100%;
+            background-color: #1a1a1a;
+            height: 550px;
+            /* border: 1px solid green; */
+
+            color: white;
+
+        }
+
+        #movie-detail-section-container {
+            display: flex;
+            justify-content: space-between;
+            width: 65%;
+            /* border: 1px solid white; */
+            height: 550px;
+            margin: auto;
+            margin-top: 75px;
+            /* background-color:gray */
+            background-image: linear-gradient(90deg, rgb(26, 26, 26) 24.97%, rgb(26, 26, 26) 38.3%, rgba(26, 26, 26, 0.04) 97.47%, rgb(26, 26, 26) 100%), url('https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/mission-impossible-dead-reckoning--part-one-et00329481-1688284554.jpg')
+        }
+
+        #image-container {
+            width: 20%;
+            height: 470px;
+            /* border: 1px solid white; */
+
+        }
+
+        #details {
+            width: 70%;
+            height: 500px;
+            /* border: 1px solid white; */
+        }
+
+        #misc-icons {
+            width: 10%;
+            height: 500px;
+            /* border: 1px solid white; */
+        }
+
+        #img-caption {
+            width: 100%;
+            height: 25px;
+            background-color: #000000;
+            text-align: center;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            margin-top: -3px;
+        }
+
+        #image-container img {
+            width: 100%;
+            height: 95%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            margin-top: 10px;
+        }
+
+
+        #movie-name-heading {
+            width: 70%;
+            height: 100px;
+            /* border: 1px solid white; */
+            margin-left: 30px;
+        }
+
+        #movie-name-heading h1 {
+            font-size: 45px;
+        }
+
+        #ratings {
+            display: flex;
+            width: 40%;
+            margin-top: 50px;
+            margin-left: 30px;
+        }
+
+        #icon {
+            width: 10%;
+        }
+
+        #add-ratings {
+            width: 45%;
+            display: flex;
+            height: 45px;
+            margin-top: 30px;
+            background-color: #333333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-left: 30px;
+
+        }
+
+
+        .margin-bottom {
+            margin-bottom: 5px;
+        }
+
+
+        #rate-now-btn {
+            width: 170px;
+            height: 50px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #333333;
+            border: none;
+
+        }
+
+        #formats-langs {
+            width: 55%;
+            /* background-color: #e5e5e5; */
+            height: 50px;
+            margin: auto;
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        .highlight {
+
+            background-color: #e5e5e5;
+            color: #333333;
+            flex-wrap: wrap;
+            margin-top: 4px;
+            font-size: 20px;
+            font-weight: normal;
+            padding: 2px;
+            width: 100%;
+            border-radius: 2px;
+
+        }
+
+        #duration {
+            width: 60%;
+            margin: auto;
+            margin-left: 30px;
+            margin-top: 30px;
+
+        }
+
+        #duration h3 {
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        #btn-book-tkt {
+
+            width: 300px;
+            height: 60px;
+            text-align: center;
+            background-color: #f94464;
+            border-radius: 5px;
+            color: white;
+            font-size: 20px;
+            margin: auto;
+            margin-left: 30px;
+            margin-top: 40px;
+            border: none;
+        }
+
+        #share {
+            width: 80%;
+            margin: auto;
+            height: 40px;
+            margin-top: 30px;
+            /* border: 1px solid black; */
+            background-color: #6a6a6a;
+            opacity: 0.7;
+            border-radius: 5px;
+            display: flex;
+            padding: 5px;
+        }
+
+        #share img {
+            width: 30px;
+            height: 35px;
+        }
+
+        #share h4 {
+
+            margin-left: 10px;
+            margin-top: 10px;
+            font-weight: normal;
+            font-size: 18px;
+
+        }
+
+        #other-details-container {
+            width: 65%;
+            margin: auto;
+            height: 600px;
+            /* border: 1px solid black; */
+
+        }
+
+        #about {
+            width: 80%;
+            height: 120px;
+            margin-top: 50px;
+
+
+        }
+
+        #about p {
+            color: #353a3f;
+            margin-top: 20px;
+            line-height: 1.3
+        }
+
+        .underline {
+            width: 100%;
+            border: 0.5px solid #b9b9b9;
+            margin-top: 30px;
+        }
+
+        #cast {
+            width: 80%;
+            height: 300px;
+            margin-top: 80px;
+           
+
+        }
+
+        #cast-images{
+            display: flex;
+            justify-content: space-between;
+            text-align:center;
+
+        }
+
+        #cast img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="movie-detail-section">
+            <div id="movie-detail-section-container">
+                <div id="image-container">
+                    <img
+                        src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/mission-impossible-dead-reckoning--part-one-et00329481-1688284554.jpg" />
+                    <div id="img-caption">
+                        <h3>In Cinemas</h3>
+                    </div>
+                </div>
+                <div id="details">
+                    <div id="movie-name-heading">
+                        <h1 class="wrap-text">Mission Impossible: Dead Reckoning - Part One</h1>
+                    </div>
+                    <div id="ratings">
+                        <div id="icon"><i class="fa-solid fa-star fa-2xl" style="color: #e67a7a; "></i></div>
+                        <div>
+                            <h2 style="margin-left:10px;margin-top:-5px">9.2/10 45.4k Vottes ></h2>
+                        </div>
+                    </div>
+                    <div id="add-ratings">
+                        <div>
+                            <h3 class="margin-bottom">Add your rating & review</h3>
+                            <p>Your ratings matter</p>
+                        </div>
+
+                        <button id="rate-now-btn">Rate Now</button>
+                    </div>
+                    <div id="formats-langs">
+                        <div>
+                            <h3 class="highlight">2D , ICE , MX4D , 4DX , IMAX 2D , 2D SCREEN X</h3>
+                        </div>
+                        <div style="width:280px;">
+                            <h3 class="highlight"> English , Hindi , Tamil , Telugu</h3>
+                        </div>
+
+                        </h3>
+                    </div>
+                    <div id="duration">
+                        <h3>2h 45m • Action , Adventure , Thriller • UA • 12 Jul, 2023</h3>
+                    </div>
+                    <div>
+                        <button id="btn-book-tkt">Book tickets</button>
+                    </div>
+                </div>
+                <div id="misc-icons">
+                    <div id="share">
+                        <img src="./../images/pngaaa.com-4805936.png" />
+                        <h4>Share</h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="other-details-container">
+            <div id="about">
+                <h2>About the movie</h2>
+                <p>In Mission: Impossible - Dead Reckoning Part One, Ethan Hunt (Tom Cruise) and his IMF team embark on
+                    their most dangerous mission yet: To track down a terrifying new weapon that threatens all of
+                    humanity
+                    before it falls into the wrong hands. With control of the future and the fate of the world at stake,
+                    and
+                    dark forces from Ethan`s past closing in, a deadly race around the globe begins. Confronted by a
+                    mysterious, all-powerful enemy, Ethan is forced to consider that nothing can matter more than his
+                    mission - not even the lives of those he cares about most.</p>
+                <div class="underline"></div>
+            </div>
+            <div id="cast">
+                <h2>Cast</h2>
+                <div  id="cast-images">
+                    <div>
+                        <img
+                            src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/tom-cruise-2384-24-03-2017-17-29-20.jpg" />
+                        <h3>Tom Cruise</h3>
+                        <p>as Ethan Hunt</p>
+                    </div>
+                    <div>
+                        <img
+                            src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/hayley-atwell-16182-24-03-2017-17-54-40.jpg" />
+                        <h3>Hayley Atwell</h3>
+                        <p>as Grace</p>
+                    </div>
+                    <div>
+                        <img
+                            src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/ving-rhames-2488-24-03-2017-12-38-01.jpg" />
+                        <h3>Ving Rhames</h3>
+                        <p>as Luther</p>
+                    </div>
+                    <div>
+                        <img
+                            src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/simon-pegg-10342-24-03-2017-12-33-05.jpg" />
+                        <h3>Simon Pegg</h3>
+                        <p>as Benji Dunn</p>
+                    </div>
+                    <div>
+                        <img
+                            src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/rebecca-ferguson-1048045-24-03-2017-16-12-13.jpg" />
+                        <h3>Rebecca Ferguson</h3>
+                        <p>as lisa Faust</p>
+                    </div>
+                    <div>
+                        <img
+                            src="https://assets-in.bmscdn.com/iedb/artist/images/website/poster/large/vanessa-kirby-1048946-22-07-2019-03-24-47.jpg" />
+                        <h3>Vanessa Kirby</h3>
+                        <p>as White Widow</p>
+                    </div>
+                </div>
+                <div class="underline"></div>
+               
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

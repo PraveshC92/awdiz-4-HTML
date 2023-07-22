@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>CSS</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        .heading {
+            margin-top: 10px;
+            background-color: #00539C ;
+            font-family:monospace;
+            color: white;
+            padding: 5px;
+        }
+
+        .box {
+            width: 150px;
+            height: 125px;
+            text-align : center;
+            background-color: #CCF381;
+            color: black;
+            padding-top: 25px;
+            font-size: 30px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 10px;
+            
+        }
+
+        .solid-border {
+            border : 4px solid black;
+        }
+
+        .dotted-border {
+            border : 4px dotted black;
+        }
+
+        .transparent-border {
+            border : 4px transparent black;
+        }
+
+        .border-double {
+            border :double
+        }
+
+        .border-dashed {
+            border : 4px dashed black;
+        }
+
+
+        #background-box {
+
+            width: 75%;
+            height: 250px;
+            margin:auto;
+            border: 2px dashed black;
+            margin-top: 30px;
+            padding: 25px;
+            background-color:#E2D1F9;
+            background-image: url('https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/OS-Windows-icon.png');
+        }
+
+    </style>
+</head>
+<body>
+    <div style="background-color: yellow;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; display:flex; justify-content:space-around;"><h1>Cascading Style Sheet</h1>
+        <p style="font-size:40px;border: 1px dotted black">Styling done using inline stylesheet</p></div>
+<div id="externalCSS">Styling done using external CSS</div>
+    <h1 class="heading">Hello! It's styling done using internal stylesheet</h1>
+    <h2 class="heading">Hello! It's styling done using internal stylesheet</h2>
+    <h3 class="heading">Hello! It's styling done using internal stylesheet</h3>
+    <h4 class="heading">Hello! It's styling done using internal stylesheet</h4>
+    <h5 class="heading">Hello! It's styling done using internal stylesheet</h5>
+
+    <h1 style="margin-top: 20px;">CSS Border Examples</h1>
+    <div style="display:flex;justify-content: space-evenly;">
+        <div class="box solid-border"> Solid Border </div>
+        <div class="box dotted-border "> Dotted Border</div>
+        <div class="box border-dashed "> Dashed Border</div>
+        <div class="box transparent-border "> Transparent Border</div>
+        <div class="box border-double "> Double Border</div>
+        <div  style="border-style: dotted solid double dashed"class="box dotted-border "> Dotted solid double dashed</div>
+    </div>
+  
+    <div id="background-box" ><h1>CSS Background image property with Repeat</h1></div>
+    <div id="background-box" style="background-repeat:no-repeat" ><h1>CSS Background image property with No Repeat</h1></div>
+<div style="height:600px;background-repeat:repeat-y" id="background-box"><h1>CSS Background image property with Repeat-y</h1></div>
+</body>
+</html>
