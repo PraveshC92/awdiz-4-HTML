@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d4fa596027.js" crossorigin="anonymous"></script>
+    <title>Disney</title>
+    <style>
+        *{
+            margin:0;
+            font-family:Arial, Helvetica, sans-serif
+        }
+
+        
+
+        #screen{
+            width:100%;
+            height:4000px;
+            /* border:1px solid green; */
+        
+        }
+
+        #container{
+            width:80%;
+            height:100%;
+            margin:auto;
+            /* border:1px solid green; */
+    
+        }
+
+        #nav-container {
+            width:40%;
+            height: 80px;
+            display:flex;
+            justify-content: left;
+            font-size:50px;
+            /* border: 1px solid green; */
+        }
+
+        #mobile-nav-bar {
+            width:100px;
+            height:50px;
+            display: none;
+        }
+
+        #nav{
+            width:100%;
+            display:flex;
+            justify-content: space-around;
+            font-size:12px;
+            padding-top:25px;
+        }
+
+        #logo{
+            width:100px;
+            height: 50px;
+
+        }
+
+        #body{
+            width:100%;
+            margin:auto;
+            margin-top:10px;
+            height: 700px;
+        }
+
+        @media screen and (max-width : 450px) {
+            #nav {
+                width:100%;
+                display: none;
+            }
+
+            #logo{
+              margin-left: 50px;
+            }
+
+            #mobile-nav-bar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="screen">
+        <div id="container">
+<div id="nav-container">
+    <div id="mobile-nav-bar"><i class="fa-solid fa-bars" style="color: #000000;"></i></div>
+    <div id="logo"><img style="width:100%;height:100%;padding:10px;" src="https://th.bing.com/th/id/R.192b638419ea9dc5f06828cc491f4fa6?rik=Se%2bKRUK1BbMaLg&riu=http%3a%2f%2fwww.fotolip.com%2fwp-content%2fuploads%2f2016%2f05%2fDisney-logo-vector-2.png&ehk=YNT6IAD71TGII6mNkHXTG1N7CUKZRTsUKE41S18BEEY%3d&risl=&pid=ImgRaw&r=0"></div>
+    <div id="nav">
+        <div>SHOP</div>
+        <div>PARKS</div>
+        <div>WHAT'S NEW</div>
+    </div>
+    
+   
+   
+</div>
+<div id="body">
+    <img  style="width:100%;height:100%;" src="https://lumiere-a.akamaihd.net/v1/images/750-x-668_1_e508ec21.png?region=0,0,750,668" />
+</div>
+        </div>
+
+
+    </div>
+    
+</body>
+</html>
