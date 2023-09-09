@@ -1,613 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech Blog - Responsive</title>
-    <script src="https://kit.fontawesome.com/d3efeb4a23.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/d3efeb4a23.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
-            color: #ffffff;
-            font-family: 'Space Grotesk', sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        color: #ffffff;
+        font-family: "Space Grotesk", sans-serif;
+      }
 
-        #bars {
-            display: none;
-        }
+      #bars {
+        display: none;
+      }
 
+      #screen {
+        width: 100%;
+        height: 5000px;
+        /* border: 1px solid white; */
+      }
 
+      #navbar {
+        height: 80px;
+        /* border: 1px solid white; */
+        display: flex;
+        justify-content: space-around;
+        position: sticky;
+        left: 0;
+        top: 0;
+      }
 
-        #screen {
-            width: 100%;
-            height: 5000px;
-            /* border: 1px solid white; */
-        }
+      #navigation {
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
+        padding-top: 30px;
+      }
 
-        #navbar {
-            height: 80px;
-            /* border: 1px solid white; */
-            display: flex;
-            justify-content: space-around;
-            position: sticky;
-            left: 0;
-            top: 0;
-        }
+      #logo {
+        padding-top: 30px;
+        width: 25%;
+      }
 
+      #logo > p:nth-child(2) {
+        display: none;
+      }
+
+      #social-networks {
+        padding-top: 30px;
+        width: 25%;
+        display: flex;
+        justify-content: end;
+      }
+
+      #social-networks > div {
+        margin-left: 20px;
+      }
+
+      #home {
+        width: 100%;
+        height: 800px;
+        margin-top: 50px;
+        border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #home-container {
+        width: 80%;
+        /* border: 1px solid white; */
+        text-align: center;
+        margin-top: 150px;
+      }
+
+      #home-container > div:nth-child(1) > img {
+        width: 108px;
+        height: 108px;
+      }
+
+      #home-container > div:nth-child(2) > h1 {
+        font-size: 70px;
+        font-weight: normal;
+      }
+
+      #home-container > div:nth-child(3) > p {
+        font-size: 18px;
+        margin-top: 20px;
+        /* word-wrap:inherit; */
+        color: #b6b6b6;
+        font-family: "DM Sans", sans-serif;
+        font-size: 18px;
+        line-height: 18px;
+      }
+
+      .button {
+        background: #a4a2a2;
+        width: 170px;
+        height: 45px;
+        border-radius: 25px;
+        margin-top: 40px;
+        color: black;
+        font-size: 16px;
+      }
+
+      #fluid-container {
+        width: 90%;
+        margin: auto;
+        border: 1px solid white;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #fluid-container > div:nth-child(1) {
+        width: 31%;
+        min-width: 31%;
+        border: 1px solid white;
+        height: 500px;
+      }
+
+      #fluid-container > div:nth-child(1) > P:nth-child(1) {
+        color: #b1ab9e;
+      }
+
+      #fluid-container > div:nth-child(1) > h1 {
+        font-size: 46px;
+        font-weight: lighter;
+        margin-top: 5px;
+      }
+
+      #fluid-container > div:nth-child(1) > P:nth-child(3) {
+        margin-top: 150px;
+        color: #b0b5b6;
+        font-size: 18px;
+      }
+
+      #fluid-container > div:nth-child(2) {
+        width: 68%;
+        border: 1px solid white;
+        height: 500px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #fluid-container > div:nth-child(2) > div:nth-child(1) {
+        width: 48%;
+        height: 100%;
+        /* border: 1px solid white; */
+        background-image: url("https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image6.jpg");
+      }
+
+      #fluid-container > div:nth-child(2) > div:nth-child(2) {
+        width: 48%;
+        height: 100%;
+        /* border: 1px solid white; */
+        background-image: url("https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image6.jpg");
+      }
+
+      #right1 {
+        width: 85%;
+        height: 80%;
+        background-color: #adadad;
+        margin: 10% 7.5% 10% 7.5%;
+        display: none;
+      }
+
+      #right1 > div:nth-child(1) {
+        width: 80%;
+        background-color: #adadad;
+        height: 60%;
+        padding-top: 15%;
+        margin: 0% 7.5% 0% 7.5%;
+        /* border: 1px solid black; */
+      }
+
+      #right1 > div:nth-child(1) > div {
+        background-image: url("https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image9.jpg");
+      }
+
+      #right1 button {
+        width: 150px;
+        height: 35px;
+        background-color: #adadad;
+        border: none;
+        border-radius: 35px;
+        color: black;
+        margin-top: 100px;
+        margin-left: 27%;
+      }
+
+      #right1 i {
+        background-color: #adadad;
+        margin-left: 10px;
+        color: black;
+      }
+
+      #right1 > div:nth-child(2) {
+        width: 80%;
+        background-color: #adadad;
+        margin-left: 10%;
+      }
+
+      #right1 > div:nth-child(2) > p {
+        padding-top: 15px;
+        background-color: #adadad;
+        color: black;
+      }
+
+      #right2 {
+        width: 85%;
+        height: 80%;
+        background-color: #adadad;
+        margin: 10% 7.5% 10% 7.5%;
+        display: none;
+      }
+
+      #right2 > div:nth-child(1) {
+        width: 80%;
+        background-color: #adadad;
+        height: 60%;
+        padding-top: 15%;
+        margin: 0% 7.5% 0% 7.5%;
+        /* border: 1px solid black; */
+      }
+
+      #right2 > div:nth-child(1) > div {
+        background-image: url("https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image9.jpg");
+      }
+
+      #right2 button {
+        width: 150px;
+        height: 35px;
+        background-color: #adadad;
+        border: none;
+        border-radius: 35px;
+        color: black;
+        margin-top: 100px;
+        margin-left: 27%;
+      }
+
+      #right2 i {
+        background-color: #adadad;
+        margin-left: 10px;
+        color: black;
+      }
+
+      #right2 > div:nth-child(2) {
+        width: 80%;
+        background-color: #adadad;
+        margin-left: 10%;
+      }
+
+      #right2 > div:nth-child(2) > p {
+        padding-top: 15px;
+        background-color: #adadad;
+        color: black;
+      }
+
+      #rightParent1:hover > div:nth-child(1) {
+        display: block;
+      }
+
+      #rightParent2:hover > div:nth-child(1) {
+        display: block;
+      }
+
+      #title-box {
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #title-box > div:nth-child(1) {
+        width: 60%;
+        margin: auto;
+        padding: 30px 45px 30px 30px;
+      }
+
+      #title-box > div:nth-child(1) > h1 {
+        font-size: 42px;
+        font-weight: Lighter;
+      }
+
+      #title-box > div:nth-child(2) {
+        width: 40%;
+        border-left: 1px solid #282828;
+        margin: auto;
+        padding: 30px 0px 30px 50px;
+      }
+
+      #title-box > div:nth-child(2) > p {
+        color: #b6b6b6;
+        font-size: 18px;
+        line-height: 18px;
+      }
+
+      #cards {
+        width: 95%;
+        margin: auto;
+        margin-top: 100px;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      #cards div {
+        width: 15%;
+        height: 250px;
+      }
+
+      #cards > div:nth-child(1) > h2 {
+        font-weight: lighter;
+        font-size: 34px;
+        padding: 5px;
+      }
+
+      #cards > div:nth-child(1) > p {
+        color: #b6b6b6;
+        font-size: 18px;
+        margin-top: 5px;
+      }
+
+      #cards img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .card-btn {
+        position: absolute;
+        width: 10%;
+        height: 40px;
+        background-color: #adadad;
+        border: none;
+        border-radius: 35px;
+        color: black;
+        left: 10;
+        margin-left: -12.5%;
+        margin-top: 8%;
+        cursor: pointer;
+        font-size: 15px;
+        display: none;
+      }
+
+      #cards div:hover .card-btn {
+        display: block;
+      }
+
+      @media screen and (max-width: 990px) {
         #navigation {
-            display: flex;
-            justify-content: space-between;
-            width: 30%;
-            padding-top: 30px;
-
-        }
-
-        #logo {
-            padding-top: 30px;
-            width: 25%;
-        }
-
-        #logo>p:nth-child(2) {
-            display: none;
+          display: none;
         }
 
         #social-networks {
-            padding-top: 30px;
-            width: 25%;
-            display: flex;
-            justify-content: end;
+          display: none;
         }
 
-        #social-networks>div {
-            margin-left: 20px;
+        #logo {
+          margin-left: 20px;
         }
 
-        #home {
-            width: 100%;
-            height: 800px;
-            margin-top: 50px;
-            border: 1px solid white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        #logo > p:nth-child(1) {
+          display: none;
         }
 
-        #home-container {
-            width: 80%;
-            /* border: 1px solid white; */
-            text-align: center;
-            margin-top: 150px;
+        #logo > p:nth-child(2) {
+          display: block;
         }
 
-        #home-container>div:nth-child(1)>img {
-            width: 108px;
-            height: 108px;
-
+        #navbar {
+          justify-content: space-between;
         }
 
-        #home-container>div:nth-child(2)>h1 {
-            font-size: 70px;
-            font-weight: normal;
+        #bars {
+          display: block;
+          padding-top: 30px;
+          margin-right: 30px;
         }
-
-        #home-container>div:nth-child(3)>p {
-            font-size: 18px;
-            margin-top: 20px;
-            /* word-wrap:inherit; */
-            color: #B6B6B6;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 18px;
-            line-height: 18px;
-        }
-
-        .button {
-            background: #a4a2a2;
-            width: 170px;
-            height: 45px;
-            border-radius: 25px;
-            margin-top: 40px;
-            color: black;
-            font-size: 16px;
-
-
-        }
-
 
         #fluid-container {
-            width: 90%;
-            margin: auto;
-            border: 1px solid white;
-            display: flex;
-            justify-content: space-between;
+          flex-flow: column;
         }
 
-        #fluid-container>div:nth-child(1) {
-            width: 31%;
-            min-width: 31%;
-            border: 1px solid white;
-            height: 500px;
+        #fluid-container > div:nth-child(1) {
+          width: 100%;
+          height: 300px;
         }
 
-        #fluid-container>div:nth-child(1)>P:nth-child(1) {
-            color: #b1ab9e;
+        #fluid-container > div:nth-child(1) > p:nth-child(3) {
+          margin-top: 10px;
         }
 
-
-
-        #fluid-container>div:nth-child(1)>h1 {
-            font-size: 46px;
-            font-weight: lighter;
-            margin-top: 5px;
-
+        #fluid-container > div:nth-child(2) {
+          width: 100%;
         }
 
-        #fluid-container>div:nth-child(1)>P:nth-child(3) {
-            margin-top: 150px;
-            color: #b0b5b6;
-            font-size: 18px;
+        #fluid-container > div:nth-child(2) > div:nth-child(1) {
+          width: 48%;
         }
 
-
-        #fluid-container>div:nth-child(2) {
-            width: 68%;
-            border: 1px solid white;
-            height: 500px;
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        #fluid-container>div:nth-child(2)>div:nth-child(1) {
-            width: 48%;
-            height: 100%;
-            /* border: 1px solid white; */
-            background-image: url('https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image6.jpg');
-        }
-
-        #fluid-container>div:nth-child(2)>div:nth-child(2) {
-            width: 48%;
-            height: 100%;
-            /* border: 1px solid white; */
-            background-image: url('https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image6.jpg');
-
-        }
-
-        #right1 {
-            width: 85%;
-            height: 80%;
-            background-color: #adadad;
-            margin: 10% 7.5% 10% 7.5%;
-            display: none;
-
-        }
-
-        #right1>div:nth-child(1) {
-            width: 80%;
-            background-color: #adadad;
-            height: 60%;
-            padding-top: 15%;
-            margin: 0% 7.5% 0% 7.5%;
-            /* border: 1px solid black; */
-        }
-
-        #right1>div:nth-child(1)>div {
-            background-image: url("https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image9.jpg")
-        }
-
-        #right1 button {
-            width: 150px;
-            height: 35px;
-            background-color: #adadad;
-            border: none;
-            border-radius: 35px;
-            color: black;
-            margin-top: 100px;
-            margin-left: 27%;
-        }
-
-        #right1 i {
-            background-color: #adadad;
-            margin-left: 10px;
-            color: black;
-        }
-
-        #right1>div:nth-child(2) {
-            width: 80%;
-            background-color: #adadad;
-            margin-left: 10%;
-        }
-
-        #right1>div:nth-child(2)>p {
-            padding-top: 15px;
-            background-color: #adadad;
-            color: black;
-        }
-
-
-        #right2 {
-            width: 85%;
-            height: 80%;
-            background-color: #adadad;
-            margin: 10% 7.5% 10% 7.5%;
-            display: none;
-
-        }
-
-
-        #right2>div:nth-child(1) {
-            width: 80%;
-            background-color: #adadad;
-            height: 60%;
-            padding-top: 15%;
-            margin: 0% 7.5% 0% 7.5%;
-            /* border: 1px solid black; */
-        }
-
-        #right2>div:nth-child(1)>div {
-            background-image: url("https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image9.jpg")
-        }
-
-        #right2 button {
-            width: 150px;
-            height: 35px;
-            background-color: #adadad;
-            border: none;
-            border-radius: 35px;
-            color: black;
-            margin-top: 100px;
-            margin-left: 27%;
-        }
-
-        #right2 i {
-            background-color: #adadad;
-            margin-left: 10px;
-            color: black;
-        }
-
-        #right2>div:nth-child(2) {
-            width: 80%;
-            background-color: #adadad;
-            margin-left: 10%;
-        }
-
-        #right2>div:nth-child(2)>p {
-            padding-top: 15px;
-            background-color: #adadad;
-            color: black;
-        }
-
-        #rightParent1:hover>div:nth-child(1) {
-            display: block;
-        }
-
-        #rightParent2:hover>div:nth-child(1) {
-            display: block;
+        #fluid-container > div:nth-child(2) > div:nth-child(2) {
+          width: 48%;
         }
 
         #title-box {
-            width: 80%;
-            margin: auto;
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-between;
+          flex-flow: column;
         }
 
-        #title-box>div:nth-child(1) {
-            width: 60%;
-            margin: auto;
-            padding: 30px 45px 30px 30px;
+        #title-box > div:nth-child(1) {
+          width: 100%;
         }
 
-        #title-box>div:nth-child(1)>h1 {
-            font-size: 42px;
-            font-weight: Lighter;
+        #title-box > div:nth-child(2) {
+          width: 100%;
+          border-top: 1px solid #282828;
+          border-left: none;
+        }
+      }
+
+      @media screen and (max-width: 765px) {
+        #fluid-container > div:nth-child(1) {
+          width: 100%;
+          height: 400px;
+          min-height: 350px;
         }
 
-        #title-box>div:nth-child(2) {
-            width: 40%;
-            border-left: 1px solid #282828;
-            margin: auto;
-            padding: 30px 0px 30px 50px;
+        #fluid-container > div:nth-child(2) {
+          flex-flow: column;
+          height: 400px;
+          margin-top: 20px;
         }
 
-        #title-box>div:nth-child(2)>p {
-            color: #B6B6B6;
-            font-size: 18px;
-            line-height: 18px;
+        #fluid-container > div:nth-child(2) > div:nth-child(1) {
+          width: 100%;
+          min-height: 400px;
         }
 
-        #cards {
-            width: 95%;
-            margin: auto;
-            margin-top: 100px;
-            display: flex;
-            justify-content: space-around;
+        #fluid-container > div:nth-child(2) > div:nth-child(2) {
+          width: 100%;
+          margin-top: 30px;
+          min-height: 400px;
         }
 
-
-        #cards div {
-            width: 15%;
-            height: 250px;
+        #title-box {
+          margin-top: 500px;
+          width: 100%;
         }
 
-        #cards>div:nth-child(1)>h2 {
-            font-weight: lighter;
-            font-size: 34px;
-            padding: 5px;
+        #title-box > div:nth-child(1) {
+          width: 80%;
+          margin: auto;
+          padding: 30px 45px 30px 30px;
         }
 
-        #cards>div:nth-child(1)>p {
-            color: #B6B6B6;
-            font-size: 18px;
-            margin-top: 5px;
+        #title-box > div:nth-child(2) {
+          width: 80%;
+          margin: auto;
+          padding: 30px 40px 30px 50px;
         }
-
-        #cards img {
-            width: 100%;
-            height: 100%;
-        }
-
-
-
-        .card-btn {
-            position: absolute;
-            width: 150px;
-            height: 35px;
-            background-color: #adadad;
-            border: none;
-            border-radius: 35px;
-            color: black;
-            left:10;
-            margin-left: -12.5%;
-            margin-top: 6%;
-            cursor: pointer;
-        }
-
-
-
-        @media screen and (max-width:990px) {
-            #navigation {
-                display: none;
-            }
-
-            #social-networks {
-                display: none;
-            }
-
-            #logo {
-                margin-left: 20px;
-            }
-
-            #logo>p:nth-child(1) {
-                display: none;
-            }
-
-            #logo>p:nth-child(2) {
-                display: block;
-            }
-
-
-            #navbar {
-                justify-content: space-between;
-            }
-
-            #bars {
-                display: block;
-                padding-top: 30px;
-                margin-right: 30px;
-            }
-
-
-            #fluid-container {
-                flex-flow: column;
-            }
-
-            #fluid-container>div:nth-child(1) {
-                width: 100%;
-                height: 300px;
-            }
-
-            #fluid-container>div:nth-child(1)>p:nth-child(3) {
-                margin-top: 10px;
-            }
-
-            #fluid-container>div:nth-child(2) {
-                width: 100%;
-
-            }
-
-            #fluid-container>div:nth-child(2)>div:nth-child(1) {
-                width: 48%;
-            }
-
-            #fluid-container>div:nth-child(2)>div:nth-child(2) {
-                width: 48%;
-            }
-
-            #title-box {
-                flex-flow: column;
-            }
-
-            #title-box>div:nth-child(1) {
-                width: 100%;
-            }
-
-            #title-box>div:nth-child(2) {
-                width: 100%;
-                border-top: 1px solid #282828;
-                border-left: none;
-            }
-
-        }
-
-        @media screen and (max-width:765px) {
-
-            #fluid-container>div:nth-child(1) {
-                width: 100%;
-                height: 400px;
-                min-height: 350px;
-            }
-
-            #fluid-container>div:nth-child(2) {
-                flex-flow: column;
-                height: 400px;
-                margin-top: 20px;
-            }
-
-            #fluid-container>div:nth-child(2)>div:nth-child(1) {
-                width: 100%;
-                min-height: 400px;
-
-            }
-
-            #fluid-container>div:nth-child(2)>div:nth-child(2) {
-                width: 100%;
-                margin-top: 30px;
-                min-height: 400px;
-
-            }
-
-            #title-box {
-                margin-top: 500px;
-                width: 100%;
-            }
-
-            #title-box>div:nth-child(1) {
-                width: 80%;
-                margin: auto;
-                padding: 30px 45px 30px 30px;
-            }
-
-            #title-box>div:nth-child(2) {
-                width: 80%;
-                margin: auto;
-                padding: 30px 40px 30px 50px;
-            }
-
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="screen">
-        <div id="navbar">
-            <div id="logo">
-                <p>Tech Blog</p>
-                <p>Mobile Logo</p>
-            </div>
-            <div id="navigation">
-                <div>Home</div>
-                <div>Blog</div>
-                <div>Articles</div>
-                <div>About Us</div>
-                <div>FAQ</div>
-            </div>
-            <div id="social-networks">
-                <div> <i class="fa-brands fa-facebook-f fa-xl" style="color: #ffffff;"></i></div>
-                <div> <i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i></div>
-                <div> <i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i></div>
-            </div>
-            <div id="bars">
-                <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;"></i>
-            </div>
+      <div id="navbar">
+        <div id="logo">
+          <p>Tech Blog</p>
+          <p>Mobile Logo</p>
         </div>
-        <div id="home">
-            <div id="home-container">
-                <div><img src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/logo.png" /></div>
-                <div>
-                    <h1>Tech Blog</h1>
-                </div>
-                <div>
-                    <p> Accusamus ea excepturi hic impedit iste neque soluta, sunt tempore <br>
-                        voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div>
-                    <button class="button"> Read More <i class="fa-solid fa-play fa-xl"
-                            style="color: #000000;margin-left:5px;"></i> </button>
-                </div>
-
-            </div>
+        <div id="navigation">
+          <div>Home</div>
+          <div>Blog</div>
+          <div>Articles</div>
+          <div>About Us</div>
+          <div>FAQ</div>
         </div>
+        <div id="social-networks">
+          <div>
+            <i class="fa-brands fa-facebook-f fa-xl" style="color: #ffffff"></i>
+          </div>
+          <div>
+            <i class="fa-brands fa-twitter fa-xl" style="color: #ffffff"></i>
+          </div>
+          <div>
+            <i class="fa-brands fa-instagram fa-xl" style="color: #ffffff"></i>
+          </div>
+        </div>
+        <div id="bars">
+          <i class="fa-solid fa-bars fa-xl" style="color: #ffffff"></i>
+        </div>
+      </div>
+      <div id="home">
+        <div id="home-container">
+          <div>
+            <img
+              src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/logo.png"
+            />
+          </div>
+          <div>
+            <h1>Tech Blog</h1>
+          </div>
+          <div>
+            <p>
+              Accusamus ea excepturi hic impedit iste neque soluta, sunt tempore
+              <br />
+              voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
+          </div>
+          <div>
+            <button class="button">
+              Read More
+              <i
+                class="fa-solid fa-play fa-xl"
+                style="color: #000000; margin-left: 5px"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
-        <div id="fluid-container">
-            <div>
-                <p>TECHNOLOGIES</p>
-                <h1>Most Popular <br> Articles</h1>
-                <p>Dolor sit amet, consectetur adipisicing elit. Aliquid autem beatae consectetur cumque dolores dolorum
-                    enim inventore iure minus nostrum nulla numquam quam quia quod, reprehenderit. </p>
-                <button class="button"> Read More <i class="fa-solid fa-play fa-xl"
-                        style="color: #000000;margin-left:5px;"></i> </button>
-            </div>
-            <div>
-                <div id="rightParent1">
-                    <div id="right1">
-                        <div>
-                            <div style="width:100%;height:100%;">
-                                <button>See Card<i class="fa-solid fa-play fa-xl"></i> </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Mobile Phone</p>
-                            <p>100$</p>
-                        </div>
-                    </div>
+      <div id="fluid-container">
+        <div>
+          <p>TECHNOLOGIES</p>
+          <h1>
+            Most Popular <br />
+            Articles
+          </h1>
+          <p>
+            Dolor sit amet, consectetur adipisicing elit. Aliquid autem beatae
+            consectetur cumque dolores dolorum enim inventore iure minus nostrum
+            nulla numquam quam quia quod, reprehenderit.
+          </p>
+          <button class="button">
+            Read More
+            <i
+              class="fa-solid fa-play fa-xl"
+              style="color: #000000; margin-left: 5px"
+            ></i>
+          </button>
+        </div>
+        <div>
+          <div id="rightParent1">
+            <div id="right1">
+              <div>
+                <div style="width: 100%; height: 100%">
+                  <button>See Card</button>
                 </div>
-                <div id="rightParent2">
-                    <div id="right2">
-                        <div>
-                            <div style="width:100%;height:100%;">
-                                <button>See Card<i class="fa-solid fa-play fa-xl"></i> </button>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Mobile Phone</p>
-                            <p>100$</p>
-                        </div>
-                    </div>
+              </div>
+              <div>
+                <p>Mobile Phone</p>
+                <p>100$</p>
+              </div>
+            </div>
+          </div>
+          <div id="rightParent2">
+            <div id="right2">
+              <div>
+                <div style="width: 100%; height: 100%">
+                  <button>See Card</button>
                 </div>
+              </div>
+              <div>
+                <p>Mobile Phone</p>
+                <p>100$</p>
+              </div>
             </div>
-
+          </div>
         </div>
-        <div id="title-box">
-            <div>
-                <h1>Modern compact, perfectly new design</h1>
-            </div>
-            <div>
-                <p>Numquam, quo recusandae sunt voluptates. Assumenda cumque dolorem eius excepturi inventore laboriosam
-                    provident quam suscipit voluptate voluptates.</p>
-            </div>
-
+      </div>
+      <div id="title-box">
+        <div>
+          <h1>Modern compact, perfectly new design</h1>
         </div>
-        <div id="cards">
-            <div>
-                <h2>Our Website</h2>
-                <p>Follow Us <br> tech@blog.com</p>
-            </div>
-            <div>
-                <img src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image4.jpg" />
-                <button class="card-btn">See Card<i class="fa-solid fa-play fa-xl"></i> </button>
-            </div>
-            <div>
-                <img src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image5.jpg" />
-                <button class="card-btn">See Card<i class="fa-solid fa-play fa-xl"></i> </button>
-            </div>
-            <div><img src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image8.jpg" />
-                <button class="card-btn">See Card<i class="fa-solid fa-play fa-xl"></i> </button>
-            </div>
-            <div><img src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image12.jpg" />
-                <button class="card-btn">See Card<i class="fa-solid fa-play fa-xl"></i> </button>
-            </div>
-            <div><img src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image15.jpg" />
-                <button class="card-btn">See Card<i class="fa-solid fa-play fa-xl"></i> </button>
-            </div>
+        <div>
+          <p>
+            Numquam, quo recusandae sunt voluptates. Assumenda cumque dolorem
+            eius excepturi inventore laboriosam provident quam suscipit
+            voluptate voluptates.
+          </p>
         </div>
-
+      </div>
+      <div id="cards">
+        <div>
+          <h2>Our Website</h2>
+          <p>
+            Follow Us <br />
+            tech@blog.com
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image4.jpg"
+          />
+          <button class="card-btn">See Card</button>
+        </div>
+        <div>
+          <img
+            src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image5.jpg"
+          />
+          <button class="card-btn">See Card</button>
+        </div>
+        <div>
+          <img
+            src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image8.jpg"
+          />
+          <button class="card-btn">See Card</button>
+        </div>
+        <div>
+          <img
+            src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image12.jpg"
+          />
+          <button class="card-btn">See Card</button>
+        </div>
+        <div>
+          <img
+            src="https://mobirise.com/extensions/boldm5/tech-blog/assets/images/image15.jpg"
+          />
+          <button class="card-btn">See Card</button>
+        </div>
+      </div>
     </div>
-
-
-</body>
-
+  </body>
 </html>
